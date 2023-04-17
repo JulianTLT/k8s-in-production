@@ -22,4 +22,8 @@ resource "aws_dynamodb_table" "jsanchez_vpc_dynamodb" {
     name = "LockID"
     type = "S"
   }
+  tags = {
+    Owner     = "jsanchez"
+    ManagedBy = "terraform"
+  }
 }
