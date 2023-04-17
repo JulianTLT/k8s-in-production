@@ -25,14 +25,11 @@ resource "aws_subnet" "eks_private_subnets" {
   tags = merge(
     var.common_tags,
     {
-      Name = "eks-private-${var.clusters_name_prefix}-${data.aws_availability_zones.availability_zones.names[count.index]}"
+      "Name"  = "eks-private-${var.clusters_name_prefix}-${data.aws_availability_zones.availability_zones.names[count.index]}"
+      "Type"  = "private"
+      "Owner" = "jsanchez"
     },
   )
-  lifecycle {
-    ignore_changes = [
-      tags
-    ]
-  }
 }
 
 resource "aws_route_table" "eks_private_route_tables" {
@@ -65,15 +62,12 @@ resource "aws_subnet" "eks_public_subnets" {
   tags = merge(
     var.common_tags,
     {
-      "Name" = "eks-public-${var.clusters_name_prefix}-${data.aws_availability_zones.availability_zones.names[count.index]}"
+      "Name"  = "eks-public-${var.clusters_name_prefix}-${data.aws_availability_zones.availability_zones.names[count.index]}"
+      "Type"  = "public"
+      "Owner" = "jsanchez"
     },
   )
 
-  lifecycle {
-    ignore_changes = [
-      tags
-    ]
-  }
 }
 
 resource "aws_route_table" "eks_public_route_table" {

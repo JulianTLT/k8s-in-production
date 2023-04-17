@@ -31,5 +31,21 @@ apply-vpc:
 all-vpc: validate init-vpc apply-vpc
 
 destroy-vpc:
-	terraform -chdir=shared-state destroy
+	terraform -chdir=clusters-vpc destroy
+
 # ---- VPC commands --------
+
+#---- Cluster commands --------
+
+init-cluster:
+	terraform -chdir=clusters init
+
+apply-cluster:
+	terraform -chdir=clusters apply
+
+destroy-cluster:
+	terraform -chdir=clusters destroy
+
+all-cluster: validate init-cluster apply-cluster
+
+#---- Cluster commands --------
