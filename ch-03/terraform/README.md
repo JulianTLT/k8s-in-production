@@ -11,3 +11,9 @@ make all-shared-state
 ```shell
 make all-vpc
 ```
+
+## Step 3 Create Cluster
+
+```shell
+make all-cluster
+```
