@@ -1,0 +1,4 @@
+external-dns:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::679441504692:role/external-dns-irsa-role
