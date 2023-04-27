@@ -1,5 +1,0 @@
-ingress-nginx:
-  controller:
-    service:
-      annotations:
-        external-dns.alpha.kubernetes.io/hostname: dev.twilio-otk-connect.com

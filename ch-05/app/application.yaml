@@ -63,18 +63,17 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    kubernetes.io/ingress.class: "nginx"
+    external-dns.alpha.kubernetes.io/hostname: nginx.jsancheztest.twilio-otk-connect.com
 spec:
-  ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /nginx
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: nginx-service
                 port:
                   number: 80
+      host: nginx.jsancheztest.twilio-otk-connect.com
