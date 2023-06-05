@@ -40,8 +40,8 @@ module "nodegroup" {
   instance_types  = ["t3.small"]
   node_group_name = "jsanchez-ng-1"
   subnet_ids      = data.aws_subnet_ids.private_subnets.ids
-  desired_size    = 1
-  max_size        = 2
+  desired_size    = 2
+  max_size        = 3
   min_size        = 1
 
   depends_on = [
