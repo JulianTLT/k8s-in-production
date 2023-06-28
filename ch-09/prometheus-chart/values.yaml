@@ -1,0 +1,4 @@
+kube-prometheus-stack:
+  coreDns:
+    service:
+      
